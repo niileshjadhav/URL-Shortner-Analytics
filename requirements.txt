@@ -1,0 +1,36 @@
+fastapi
+uvicorn[standard]
+
+# Database
+sqlalchemy
+asyncpg
+psycopg2-binary
+alembic
+
+# Validation & Config
+pydantic
+pydantic-settings
+python-dotenv
+
+# Redis
+redis
+
+# HTTP / Forms
+httpx
+python-multipart
+
+# Logging
+loguru
+
+# Testing
+pytest
+pytest-asyncio
+pytest-cov
+fakeredis
+testcontainers
+
+# Dev Tools
+black
+ruff
+isort
+mypy
