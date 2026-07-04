@@ -2,8 +2,8 @@ from datetime import UTC, datetime, timedelta
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.api.models.link import Link
-from app.api.services.shortener import generate_code
+from app.models.link import Link
+from app.services.shortener import generate_code
 
 async def create_link(db: AsyncSession, target_url: str, custom_code:str|None = None):
     

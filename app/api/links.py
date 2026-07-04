@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.api.db.session import get_db
-from app.api.schemas.link import LinkCreate, LinkResponse
-from app.api.services.link_service import create_link, get_link
+from app.db.session import get_db
+from app.schemas.link import LinkCreate, LinkResponse
+from app.services.link_service import create_link, get_link
 
 
 router = APIRouter(prefix="/links", tags=["Links"])

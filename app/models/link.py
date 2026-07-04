@@ -1,6 +1,6 @@
 from sqlalchemy import String, DateTime, Boolean
 from sqlalchemy.orm import Mapped, mapped_column
-from app.api.db.base import Base, TimestampMixin
+from app.db.base import Base, TimestampMixin
 import datetime
 
 class Link(Base, TimestampMixin):

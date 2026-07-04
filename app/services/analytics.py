@@ -1,6 +1,6 @@
 from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.api.models.click_event import ClickEvent
+from app.models.click_event import ClickEvent
 
 
 async def record_click(db: AsyncSession, link_id: int, ip: str | None = None, referrer: str | None = None):

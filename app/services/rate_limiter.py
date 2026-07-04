@@ -1,4 +1,4 @@
-from app.api.services.cache import redis_client
+from app.services.cache import redis_client
 
 async def is_allowed(ip:str, limit:int = 10, window:int = 60):
 

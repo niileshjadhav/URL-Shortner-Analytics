@@ -7,12 +7,12 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
 
-from app.api.db.base import Base
+from app.db.base import Base
 from app.config import settings
 
 # IMPORTANT: import models so Alembic detects them
-from app.api.models.link import Link
-from app.api.models.click_event import ClickEvent
+from app.models.link import Link
+from app.models.click_event import ClickEvent
 
 
 config = context.config

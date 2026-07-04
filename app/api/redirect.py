@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import RedirectResponse
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.api.db.session import get_db
-from app.api.services.cache import get_cache, set_cache
-from app.api.services.link_service import get_link
-from app.api.services.analytics import record_click
+from app.db.session import get_db
+from app.services.cache import get_cache, set_cache
+from app.services.link_service import get_link
+from app.services.analytics import record_click
 from datetime import datetime, UTC
 
 

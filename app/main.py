@@ -3,9 +3,10 @@ from fastapi.responses import JSONResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
 from fastapi import FastAPI, Depends, Request
-from app.api.db.session import get_db
-from app.api.services.rate_limiter import is_allowed
-from app.api.v1 import links, redirect, analytics
+from app.api import analytics, links
+from app.db.session import get_db
+from app.services.rate_limiter import is_allowed
+from app.api import redirect
 
 
 app = FastAPI(title="URL Shortner Service")

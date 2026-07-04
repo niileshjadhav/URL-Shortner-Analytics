@@ -1,6 +1,6 @@
 from sqlalchemy import String, DateTime, Boolean, ForeignKey, func
 from sqlalchemy.orm import Mapped, mapped_column
-from app.api.db.base import Base, TimestampMixin
+from app.db.base import Base, TimestampMixin
 from datetime import datetime, UTC, timezone
 
 class ClickEvent(Base):
