@@ -8,7 +8,6 @@ from app.api.services.rate_limiter import is_allowed
 from app.api.v1 import links, redirect, analytics
 
 
-
 app = FastAPI(title="URL Shortner Service")
 
 app.include_router(links.router, prefix="/api/v1")
@@ -31,9 +30,9 @@ async def db_test(db: AsyncSession = Depends(get_db)):
 
 
 @app.middleware("http")
-async def rate_limit_middleware(request:Request, call_next):
+async def rate_limit_middleware(request: Request, call_next):
 
-    ip = request.client.host
+    ip = request.client.host if request.client else "unknown"
 
     allowed = await is_allowed(ip)
 

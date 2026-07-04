@@ -1,3 +1,5 @@
+from datetime import UTC, datetime, timedelta
+
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.api.models.link import Link
@@ -14,7 +16,10 @@ async def create_link(db: AsyncSession, target_url: str, custom_code:str|None = 
     if existing_link:
         raise ValueError("Code already exists")
     
-    link = Link(code=code, target_url=target_url)
+    link = Link(code=code, 
+                target_url=target_url,  
+                expires_at=datetime.now(UTC) + timedelta(seconds=30)
+                )
     db.add(link)
     await db.commit()
     await db.refresh(link)
